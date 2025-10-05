@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PDF Compressor — Welcome</title>
+  <meta name="description" content="Welcome page for PDF Compressor Chrome extension." />
+
+  <!-- Umami code -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="24f5e6fe-3038-49a9-a50f-7dc1986f6224"></script>
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand:#0A1625;      /* фирменный тёмный */
+      --body:#0b1623;       /* общий фон страницы */
+      --card-bg:#0f1d2e;    /* фон карточки */
+      --card-bg-2:#0c1a29;  /* нижний градиент карточки */
+      --card-border:#12263c;
+      --text-hero:#e6edf3;
+      --text-muted:#cfe0ef;
+      --muted:#9fb3c8;
+      --radius:18px;
+      --shadow:0 24px 60px rgba(0,0,0,.35), 0 3px 10px rgba(0,0,0,.25);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--body);
+      color:#dbe7f3;
+    }
+
+    /* контейнер страницы */
+    .wrap{
+      max-width: 1100px;
+      margin: 36px auto 32px;
+      padding: 0 20px;
+    }
+
+    /* единая «панель»-карточка */
+    .panel{
+      background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 28px 22px;
+    }
+
+    /* шапка внутри панели */
+    .panel__header{
+      text-align:center;
+      margin-bottom: 28px;
+    }
+    .panel__icon{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:72px; height:72px; border-radius:50%;
+      background:#0f2a44; border:1px solid #12314e; color:#7ceba3;
+      box-shadow: 0 4px 12px rgba(0,0,0,.25) inset;
+      margin: 4px auto 18px;
+    }
+    .panel__icon svg{ width:36px; height:36px; stroke: currentColor; }
+
+    .panel__header h1{
+      font-size: clamp(28px, 4.4vw, 44px);
+      line-height:1.15; letter-spacing:-.02em;
+      margin:0 0 12px; font-weight: 800; color:#fff;
+      text-wrap: balance;
+    }
+    .panel__header p{
+      margin:0; font-size: 17px; color: var(--text-hero);
+      opacity:.95;
+    }
+
+    /* секции внутри панели */
+    .panel__section + .panel__section{
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .panel__caption{
+      color: var(--text-muted);
+      font-size: clamp(16px, 2.1vw, 18px);
+      margin: 0 0 14px;
+      text-align: center;
+    }
+    .panel__media{
+      display:block; width:100%; height:auto;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+      /* Уменьшаем высоту изображений, чтобы показать часть второго экрана */
+      max-height: 60vh;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    footer{
+      color: var(--muted);
+      text-align:center;
+      font-size: 13px;
+      padding: 20px 16px 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="wrap">
+    <section class="panel" aria-label="Welcome and how-to">
+      <div class="panel__header">
+        <div class="panel__icon" aria-hidden="true">
+          <!-- зелёная «галочка» -->
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+            <path d="M20 6L9 17l-5-5" />
+          </svg>
+        </div>
+        <h1>Thank you for installing PDF Compressor!</h1>
+        <p>To ensure we stay connected, click the Extensions icon at the top right of Chrome and pin 'PDF Compressor' to your toolbar.</p>
+      </div>
+
+      <div class="panel__section">
+        <p class="panel__caption">Pin the extension to your toolbar</p>
+        <img class="panel__media" src="Landing_Screen_1_PDF Compressor.png" alt="Step 1 — pin PDF Compressor to the toolbar" />
+      </div>
+
+      <div class="panel__section">
+        <p class="panel__caption">Now, click the 'PDF Compressor' icon whenever you need to instantly compress PDF files.</p>
+        <img class="panel__media" src="Landing_Screen_2_PDF Compressor.png" alt="Step 2 — click the PDF Compressor icon" />
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2025 PDF Compressor</footer>
+</body>
+</html>
