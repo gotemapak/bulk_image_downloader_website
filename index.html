@@ -200,7 +200,7 @@
 
     /* Features section */
     .features {
-      padding: 100px 0;
+      padding: 60px 0;
     }
 
     .section-header {
@@ -271,7 +271,7 @@
 
     /* Benefits section */
     .benefits {
-      padding: 100px 0;
+      padding: 60px 0;
       background: linear-gradient(180deg, transparent, rgba(255, 71, 87, 0.05));
     }
 
@@ -329,11 +329,11 @@
 
     /* CTA section */
     .cta-section {
-      padding: 100px 0;
+      padding: 60px 0;
       text-align: center;
       background: linear-gradient(135deg, var(--card-bg), var(--card-bg-2));
       border-radius: var(--radius);
-      margin: 80px 0;
+      margin: 40px 0;
     }
 
     .cta-section h2 {
@@ -408,14 +408,14 @@
     <!-- Hero Section -->
     <section class="hero">
       <h1>Download Images in Bulk</h1>
-      <p>Extract and download hundreds of images from any website instantly with our powerful Chrome extension. Free, fast, and easy to use.</p>
+      <p>Extract and download hundreds of images from any website instantly with our powerful Chrome extension. Fast, secure, and easy to use.</p>
       <div class="hero-cta">
         <a href="https://chromewebstore.google.com/detail/bulk-image-downloader/kbafpfajhhaeilcldcmmjbgjlecnbfgj" class="btn-primary" target="_blank">Install Extension</a>
       </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features" id="features" style="padding-top: 60px;">
+    <section class="features" id="features" style="padding-top: 40px;">
       <div class="section-header">
         <h2 class="section-title">Powerful Features</h2>
         <p class="section-subtitle">Everything you need to download images efficiently from any website</p>
@@ -455,19 +455,55 @@
     </section>
 
     <!-- Benefits Section -->
-    <section class="benefits" id="benefits">
-      <div class="benefits-content">
+    <section class="benefits" id="benefits" style="padding: 60px 0;">
+      <div class="benefits-content" style="grid-template-columns: 1fr; text-align: center; max-width: 800px; margin: 0 auto;">
         <div class="benefits-text">
-          <h2>Perfect for Everyone</h2>
-          <p>Whether you're a designer, developer, researcher, or content creator, Bulk Image Downloader saves you time and effort.</p>
-          <ul class="benefits-list">
-            <li>Web designers collecting inspiration</li>
-            <li>Content creators building image libraries</li>
-            <li>Researchers gathering visual data</li>
-            <li>E-commerce managers downloading product photos</li>
-            <li>Students collecting images for projects</li>
-            <li>Anyone who needs to save images efficiently</li>
-          </ul>
+          <h2 style="font-size: clamp(32px, 4vw, 48px); margin-bottom: 24px;">Perfect for Everyone</h2>
+          <p style="font-size: 20px; margin-bottom: 40px; color: var(--text-muted);">Whether you're a designer, developer, researcher, or content creator, Bulk Image Downloader saves you time and effort.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px;">
+            <div style="background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2)); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; text-align: left;">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <div style="width: 24px; height: 24px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">✓</div>
+                <h3 style="margin: 0; color: #fff; font-size: 18px; font-weight: 600;">Web Designers</h3>
+              </div>
+              <p style="margin: 0; color: var(--text-muted); font-size: 14px;">Collecting inspiration and visual references</p>
+            </div>
+            <div style="background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2)); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; text-align: left;">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <div style="width: 24px; height: 24px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">✓</div>
+                <h3 style="margin: 0; color: #fff; font-size: 18px; font-weight: 600;">Content Creators</h3>
+              </div>
+              <p style="margin: 0; color: var(--text-muted); font-size: 14px;">Building comprehensive image libraries</p>
+            </div>
+            <div style="background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2)); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; text-align: left;">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <div style="width: 24px; height: 24px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">✓</div>
+                <h3 style="margin: 0; color: #fff; font-size: 18px; font-weight: 600;">Researchers</h3>
+              </div>
+              <p style="margin: 0; color: var(--text-muted); font-size: 14px;">Gathering visual data and references</p>
+            </div>
+            <div style="background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2)); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; text-align: left;">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <div style="width: 24px; height: 24px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">✓</div>
+                <h3 style="margin: 0; color: #fff; font-size: 18px; font-weight: 600;">E-commerce Managers</h3>
+              </div>
+              <p style="margin: 0; color: var(--text-muted); font-size: 14px;">Downloading product photos efficiently</p>
+            </div>
+            <div style="background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2)); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; text-align: left;">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <div style="width: 24px; height: 24px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">✓</div>
+                <h3 style="margin: 0; color: #fff; font-size: 18px; font-weight: 600;">Students</h3>
+              </div>
+              <p style="margin: 0; color: var(--text-muted); font-size: 14px;">Collecting images for projects and research</p>
+            </div>
+            <div style="background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2)); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; text-align: left;">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <div style="width: 24px; height: 24px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">✓</div>
+                <h3 style="margin: 0; color: #fff; font-size: 18px; font-weight: 600;">Everyone</h3>
+              </div>
+              <p style="margin: 0; color: var(--text-muted); font-size: 14px;">Anyone who needs to save images efficiently</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
