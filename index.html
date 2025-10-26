@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bulk Image Downloader — Welcome</title>
-  <meta name="description" content="Welcome page for Bulk Image Downloader Chrome extension." />
+  <title>Bulk Image Downloader - Download Images in Bulk from Any Website</title>
+  <meta name="description" content="Extract and download hundreds of images from any website instantly with our powerful Chrome extension. Free, fast, and easy to use." />
+  <meta name="keywords" content="bulk image downloader, image extractor, chrome extension, download images, web scraping, image grabber" />
 
-  <!-- Umami tracking removed -->
+  <!-- Umami tracking -->
   <script defer src="https://cloud.umami.is/script.js" data-website-id="cbf2f890-7747-4fc9-b581-79adfbaeee85"></script>
   
   <!-- Favicons -->
@@ -19,124 +20,472 @@
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --brand:#0A1625;      /* фирменный тёмный */
-      --body:#0b1623;       /* общий фон страницы */
-      --card-bg:#0f1d2e;    /* фон карточки */
-      --card-bg-2:#0c1a29;  /* нижний градиент карточки */
-      --card-border:#12263c;
-      --text-hero:#e6edf3;
-      --text-muted:#cfe0ef;
-      --muted:#9fb3c8;
-      --radius:18px;
-      --shadow:0 24px 60px rgba(0,0,0,.35), 0 3px 10px rgba(0,0,0,.25);
+    :root {
+      --brand: #0A1625;
+      --body: #0b1623;
+      --card-bg: #0f1d2e;
+      --card-bg-2: #0c1a29;
+      --card-border: #12263c;
+      --text-hero: #e6edf3;
+      --text-muted: #cfe0ef;
+      --muted: #9fb3c8;
+      --accent: #ff4757;
+      --accent-hover: #ff3742;
+      --accent-light: #ff6b7a;
+      --radius: 18px;
+      --shadow: 0 24px 60px rgba(0,0,0,.35), 0 3px 10px rgba(0,0,0,.25);
+      --shadow-sm: 0 8px 25px rgba(0,0,0,.2);
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background: var(--body);
-      color:#dbe7f3;
+      color: #dbe7f3;
+      line-height: 1.6;
     }
 
-    /* контейнер страницы */
-    .wrap{
+    /* Header */
+    .header {
+      background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
+      border-bottom: 1px solid var(--card-border);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
       max-width: 1100px;
-      margin: 12px auto 32px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: white;
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(255, 71, 87, 0.3);
+    }
+
+    /* Main content */
+    .main {
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 0 20px;
     }
 
-    /* единая «панель»-карточка */
-    .panel{
+    /* Hero section */
+    .hero {
+      text-align: center;
+      padding: 80px 0 100px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 0 0 24px;
+      background: linear-gradient(135deg, #fff, var(--text-hero));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: clamp(18px, 2.5vw, 24px);
+      color: var(--text-muted);
+      margin: 0 0 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: white;
+      padding: 16px 32px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      transition: all 0.2s;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px rgba(255, 71, 87, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-muted);
+      padding: 16px 32px;
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Features section */
+    .features {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 800;
+      margin: 0 0 16px;
+      color: #fff;
+    }
+
+    .section-subtitle {
+      font-size: 20px;
+      color: var(--text-muted);
+      margin: 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 60px;
+    }
+
+    .feature-card {
       background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
       box-shadow: var(--shadow);
-      padding: 28px 28px 22px;
     }
 
-    /* шапка внутри панели */
-    .panel__header{
-      text-align:center;
-      margin-bottom: 28px;
-    }
-    .panel__icon{
-      display:inline-flex; align-items:center; justify-content:center;
-      width:72px; height:72px; border-radius:50%;
-      background:#0f2a44; border:1px solid #12314e; color:#7ceba3;
-      box-shadow: 0 4px 12px rgba(0,0,0,.25) inset;
-      margin: 4px auto 18px;
-    }
-    .panel__icon svg{ width:36px; height:36px; stroke: currentColor; }
-
-    .panel__header h1{
-      font-size: clamp(28px, 4.4vw, 44px);
-      line-height:1.15; letter-spacing:-.02em;
-      margin:0 0 12px; font-weight: 800; color:#fff;
-      text-wrap: balance;
-    }
-    .panel__header p{
-      margin:0; font-size: 17px; color: var(--text-hero);
-      opacity:.95;
+    .feature-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 28px;
     }
 
-    /* секции внутри панели */
-    .panel__section + .panel__section{
-      margin-top: 28px;
-      padding-top: 22px;
-      border-top: 1px solid rgba(255,255,255,.06);
+    .feature-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      color: #fff;
     }
-    .panel__caption{
+
+    .feature-description {
       color: var(--text-muted);
-      font-size: clamp(16px, 2.1vw, 18px);
-      margin: 0 0 14px;
+      margin: 0;
+    }
+
+    /* Benefits section */
+    .benefits {
+      padding: 100px 0;
+      background: linear-gradient(180deg, transparent, rgba(255, 71, 87, 0.05));
+    }
+
+    .benefits-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .benefits-text h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+      margin: 0 0 24px;
+      color: #fff;
+    }
+
+    .benefits-text p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin: 0 0 32px;
+    }
+
+    .benefits-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .benefits-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--text-muted);
+    }
+
+    .benefits-list li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .benefits-visual {
       text-align: center;
     }
-    .panel__media{
-      display:block; width:100%; height:auto;
-      border-radius: 12px;
-      border: 1px solid var(--card-border);
-      box-shadow: 0 12px 30px rgba(0,0,0,.35);
-      /* Уменьшаем высоту изображений, чтобы показать часть второго экрана */
-      max-height: 60vh;
-      object-fit: cover;
-      object-position: top;
+
+    .benefits-visual img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
     }
 
-    footer{
+    /* CTA section */
+    .cta-section {
+      padding: 100px 0;
+      text-align: center;
+      background: linear-gradient(135deg, var(--card-bg), var(--card-bg-2));
+      border-radius: var(--radius);
+      margin: 80px 0;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+      margin: 0 0 16px;
+      color: #fff;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin: 0 0 32px;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--card-border);
+      padding: 40px 0;
+      text-align: center;
       color: var(--muted);
-      text-align:center;
-      font-size: 13px;
-      padding: 20px 16px 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav {
+        gap: 16px;
+      }
+
+      .hero {
+        padding: 60px 0 80px;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .benefits-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo">
+        <div class="logo-icon">B</div>
+        Bulk Image Downloader
+      </a>
+      <nav class="nav">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#benefits" class="nav-link">Benefits</a>
+        <a href="/install" class="nav-link">Install</a>
+        <a href="https://chrome.google.com/webstore" class="cta-button" target="_blank">Get Extension</a>
+      </nav>
+    </div>
+  </header>
 
-  <main class="wrap">
-    <section class="panel" aria-label="Welcome and how-to">
-      <div class="panel__header">
-        <h1>Thank you for installing Bulk Image Downloader!</h1>
-        <p>To ensure we stay connected, click the Extensions icon at the top right of Chrome and pin 'Bulk Image Downloader' to your toolbar.</p>
+  <main class="main">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Download Images in Bulk</h1>
+      <p>Extract and download hundreds of images from any website instantly with our powerful Chrome extension. Free, fast, and easy to use.</p>
+      <div class="hero-cta">
+        <a href="https://chrome.google.com/webstore" class="btn-primary" target="_blank">Install Extension</a>
+        <a href="/install" class="btn-secondary">Installation Guide</a>
       </div>
+    </section>
 
-      <div class="panel__section">
-        <p class="panel__caption">Pin the extension to your toolbar</p>
-        <img class="panel__media" src="Landing_Screen_1.png" alt="Step 1 — pin Bulk Image Downloader to the toolbar" />
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="section-header">
+        <h2 class="section-title">Powerful Features</h2>
+        <p class="section-subtitle">Everything you need to download images efficiently from any website</p>
       </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3 class="feature-title">Lightning Fast</h3>
+          <p class="feature-description">Download hundreds of images in seconds with our optimized extraction engine</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3 class="feature-title">Smart Detection</h3>
+          <p class="feature-description">Automatically detects all images on the page, including thumbnails and high-res versions</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3 class="feature-title">Filter & Sort</h3>
+          <p class="feature-description">Filter by size, format, or source. Sort by dimensions or file size before downloading</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💾</div>
+          <h3 class="feature-title">Batch Download</h3>
+          <p class="feature-description">Download all selected images at once with automatic file naming and organization</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3 class="feature-title">Safe & Secure</h3>
+          <p class="feature-description">No data collection, works offline, and respects website terms of service</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3 class="feature-title">Floating Widget</h3>
+          <p class="feature-description">Quick access with our floating widget that appears on any website</p>
+        </div>
+      </div>
+    </section>
 
-      <div class="panel__section">
-        <p class="panel__caption">Now, click the 'Bulk Image Downloader' icon whenever you need to download images in bulk.</p>
-        <img class="panel__media" src="Landing_Screen_2.png" alt="Step 2 — click the Bulk Image Downloader icon" />
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+      <div class="benefits-content">
+        <div class="benefits-text">
+          <h2>Perfect for Everyone</h2>
+          <p>Whether you're a designer, developer, researcher, or content creator, Bulk Image Downloader saves you time and effort.</p>
+          <ul class="benefits-list">
+            <li>Web designers collecting inspiration</li>
+            <li>Content creators building image libraries</li>
+            <li>Researchers gathering visual data</li>
+            <li>E-commerce managers downloading product photos</li>
+            <li>Students collecting images for projects</li>
+            <li>Anyone who needs to save images efficiently</li>
+          </ul>
+        </div>
+        <div class="benefits-visual">
+          <img src="Landing_Screen_1.png" alt="Bulk Image Downloader in action" />
+        </div>
       </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <h2>Ready to Get Started?</h2>
+      <p>Join thousands of users who save time with Bulk Image Downloader</p>
+      <a href="https://chrome.google.com/webstore" class="btn-primary" target="_blank">Install Now - It's Free</a>
     </section>
   </main>
 
-  <footer>© 2025 Bulk Image Downloader</footer>
+  <footer class="footer">
+    <p>© 2025 Bulk Image Downloader. All rights reserved.</p>
+  </footer>
 </body>
 </html>

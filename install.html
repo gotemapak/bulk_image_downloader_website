@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Installation Guide - Bulk Image Downloader</title>
+  <meta name="description" content="Step-by-step installation guide for Bulk Image Downloader Chrome extension. Learn how to pin and use the extension." />
+
+  <!-- Umami tracking -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="cbf2f890-7747-4fc9-b581-79adfbaeee85"></script>
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #0A1625;
+      --body: #0b1623;
+      --card-bg: #0f1d2e;
+      --card-bg-2: #0c1a29;
+      --card-border: #12263c;
+      --text-hero: #e6edf3;
+      --text-muted: #cfe0ef;
+      --muted: #9fb3c8;
+      --accent: #ff4757;
+      --accent-hover: #ff3742;
+      --radius: 18px;
+      --shadow: 0 24px 60px rgba(0,0,0,.35), 0 3px 10px rgba(0,0,0,.25);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--body);
+      color: #dbe7f3;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
+      border-bottom: 1px solid var(--card-border);
+      padding: 20px 0;
+    }
+
+    .header-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .breadcrumb a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main content */
+    .main {
+      max-width: 1100px;
+      margin: 12px auto 32px;
+      padding: 0 20px;
+    }
+
+    /* Panel */
+    .panel {
+      background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 28px 22px;
+    }
+
+    .panel__header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .panel__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #0f2a44;
+      border: 1px solid #12314e;
+      color: var(--accent);
+      box-shadow: 0 4px 12px rgba(0,0,0,.25) inset;
+      margin: 4px auto 18px;
+      font-size: 36px;
+    }
+
+    .panel__header h1 {
+      font-size: clamp(28px, 4.4vw, 44px);
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      margin: 0 0 12px;
+      font-weight: 800;
+      color: #fff;
+      text-wrap: balance;
+    }
+
+    .panel__header p {
+      margin: 0;
+      font-size: 17px;
+      color: var(--text-hero);
+      opacity: .95;
+    }
+
+    .panel__section + .panel__section {
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+
+    .panel__caption {
+      color: var(--text-muted);
+      font-size: clamp(16px, 2.1vw, 18px);
+      margin: 0 0 14px;
+      text-align: center;
+    }
+
+    .panel__media {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+      max-height: 60vh;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--card-bg), var(--card-bg-2));
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 40px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .cta-section h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin: 0 0 16px;
+      color: #fff;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin: 0 0 32px;
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: white;
+      padding: 16px 32px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      transition: all 0.2s;
+      box-shadow: var(--shadow);
+      display: inline-block;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px rgba(255, 71, 87, 0.4);
+    }
+
+    /* Footer */
+    .footer {
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+      padding: 20px 16px 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+
+      .panel {
+        padding: 20px;
+      }
+
+      .cta-section {
+        padding: 32px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo">
+        <div class="logo-icon">B</div>
+        Bulk Image Downloader
+      </a>
+      <div class="breadcrumb">
+        <a href="/">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="panel" aria-label="Installation guide">
+      <div class="panel__header">
+        <div class="panel__icon">🎉</div>
+        <h1>Thank you for installing Bulk Image Downloader!</h1>
+        <p>To ensure we stay connected, click the Extensions icon at the top right of Chrome and pin 'Bulk Image Downloader' to your toolbar.</p>
+      </div>
+
+      <div class="panel__section">
+        <p class="panel__caption">Pin the extension to your toolbar</p>
+        <img class="panel__media" src="Landing_Screen_1.png" alt="Step 1 — pin Bulk Image Downloader to the toolbar" />
+      </div>
+
+      <div class="panel__section">
+        <p class="panel__caption">Now, click the 'Bulk Image Downloader' icon whenever you need to download images in bulk.</p>
+        <img class="panel__media" src="Landing_Screen_2.png" alt="Step 2 — click the Bulk Image Downloader icon" />
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <h2>Need Help Getting Started?</h2>
+      <p>Visit our homepage to learn about all the powerful features available in Bulk Image Downloader</p>
+      <a href="/" class="cta-button">Explore Features</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Bulk Image Downloader</p>
+  </footer>
+</body>
+</html>
