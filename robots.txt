@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bulk-image-downloader.com/sitemap.xml
