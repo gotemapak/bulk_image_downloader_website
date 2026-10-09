@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bulk Image Downloader FAQ - Common Questions Answered</title>
+  <meta name="description" content="Answers to common questions about Bulk Image Downloader: how it works, whether it works on any website, data privacy, offline use, and filtering by size or format." />
+  <meta name="keywords" content="bulk image downloader faq, download all images from a website chrome, image downloader extension free, image downloader no data collection" />
+  <link rel="canonical" href="https://bulk-image-downloader.com/faq/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bulk-image-downloader.com/faq/" />
+  <meta property="og:title" content="Bulk Image Downloader FAQ - Common Questions Answered" />
+  <meta property="og:description" content="Answers to common questions about Bulk Image Downloader: how it works, whether it works on any website, data privacy, offline use, and filtering by size or format." />
+  <meta property="og:image" content="https://bulk-image-downloader.com/Landing_Screen_1.png" />
+  <meta property="og:site_name" content="Bulk Image Downloader" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bulk Image Downloader FAQ - Common Questions Answered" />
+  <meta name="twitter:description" content="Answers to common questions about Bulk Image Downloader: how it works, whether it works on any website, data privacy, offline use, and filtering by size or format." />
+  <meta name="twitter:image" content="https://bulk-image-downloader.com/Landing_Screen_1.png" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KWNNQT8N');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Umami tracking -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="cbf2f890-7747-4fc9-b581-79adfbaeee85"></script>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #0A1625;
+      --body: #0b1623;
+      --card-bg: #0f1d2e;
+      --card-bg-2: #0c1a29;
+      --card-border: #12263c;
+      --text-hero: #e6edf3;
+      --text-muted: #cfe0ef;
+      --muted: #9fb3c8;
+      --accent: #ff4757;
+      --accent-hover: #ff3742;
+      --accent-light: #ff6b7a;
+      --radius: 18px;
+      --shadow: 0 24px 60px rgba(0,0,0,.35), 0 3px 10px rgba(0,0,0,.25);
+      --shadow-sm: 0 8px 25px rgba(0,0,0,.2);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--body);
+      color: #dbe7f3;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
+      border-bottom: 1px solid var(--card-border);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: white;
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(255, 71, 87, 0.3);
+    }
+
+    /* Main content */
+    .main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Hero section */
+    .hero {
+      text-align: center;
+      padding: 80px 0 60px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin: 0 0 24px;
+      background: linear-gradient(135deg, #fff, var(--text-hero));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: clamp(18px, 2.5vw, 22px);
+      color: var(--text-muted);
+      margin: 0 0 40px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: white;
+      padding: 16px 32px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      transition: all 0.2s;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px rgba(255, 71, 87, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-muted);
+      padding: 16px 32px;
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 800;
+      margin: 0 0 16px;
+      color: #fff;
+    }
+
+    .section-subtitle {
+      font-size: 20px;
+      color: var(--text-muted);
+      margin: 0;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .feature-card {
+      background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: all 0.2s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 12px;
+      color: #fff;
+    }
+
+    .feature-description {
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .feature-description a {
+      color: var(--accent);
+    }
+
+    /* CTA section */
+    .cta-section {
+      padding: 60px 0;
+      text-align: center;
+      background: linear-gradient(135deg, var(--card-bg), var(--card-bg-2));
+      border-radius: var(--radius);
+      margin: 40px 0;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+      margin: 0 0 16px;
+      color: #fff;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin: 0 0 32px;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--card-border);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .footer a {
+      color: var(--text-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 60px 0 40px;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I download all images from a website in Chrome?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Install the Bulk Image Downloader extension, then open the webpage containing the images. Click the extension icon or its floating widget to scan the page — it automatically detects all images, including thumbnails and high-resolution versions. Select the images you want, optionally filter by size or format, and download them all at once. See the full step-by-step guide for details."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work on any website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Bulk Image Downloader scans the page you're currently viewing, whatever site it's on — it isn't limited to a specific list of supported sites. It works the same way on product pages, galleries, portfolios, blogs, and any other webpage that displays images."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Bulk Image Downloader free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Bulk Image Downloader is free to install and use from the Chrome Web Store."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it collect my data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Bulk Image Downloader does not collect your data. Image detection and downloading happen locally in your browser, with nothing sent to an external server. See how detection works for more detail."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Because scanning and downloading run locally in your browser rather than through a remote service, Bulk Image Downloader works offline — no account, sign-up, or internet-based processing is required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What image formats and sizes can I filter by?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can filter the images Bulk Image Downloader detects on a page by size, format, or source, and sort them by dimensions or file size before downloading. This covers the common web image formats a page may contain, such as JPG, PNG, WebP, GIF, and SVG."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can it find full-resolution images, not just thumbnails?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Many pages only display small preview or thumbnail images while linking to larger originals behind the scenes. Bulk Image Downloader's Smart Detection finds those hidden full-resolution originals too, so you aren't stuck downloading low-res previews."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I pin the extension?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Click the puzzle-piece icon in Chrome's toolbar, find Bulk Image Downloader in the list, and click the pin icon next to it to keep it visible in your toolbar."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWNNQT8N"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo">
+        <div class="logo-icon">B</div>
+        Bulk Image Downloader
+      </a>
+      <nav class="nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/guide/" class="nav-link">Guide</a>
+        <a href="/use-cases/" class="nav-link">Use Cases</a>
+        <a href="/faq/" class="nav-link">FAQ</a>
+        <a href="/install" class="nav-link">Install</a>
+        <a href="https://chromewebstore.google.com/detail/bulk-image-downloader/kbafpfajhhaeilcldcmmjbgjlecnbfgj" class="cta-button" target="_blank">Get Extension</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Frequently Asked Questions</h1>
+      <p>Straight answers about how Bulk Image Downloader works, where it works, what happens to your data, and how to filter down to exactly the images you need.</p>
+      <div class="hero-cta">
+        <a href="https://chromewebstore.google.com/detail/bulk-image-downloader/kbafpfajhhaeilcldcmmjbgjlecnbfgj" class="btn-primary" target="_blank">Install the Extension — Free</a>
+        <a href="/guide/" class="btn-secondary">Read the Step-by-Step Guide</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="padding: 0 0 60px;">
+      <div style="max-width: 800px; margin: 0 auto; display: grid; gap: 20px;">
+        <div class="feature-card">
+          <h2 class="feature-title">How do I download all images from a website in Chrome?</h2>
+          <p class="feature-description">Install the Bulk Image Downloader extension, then open the webpage containing the images. Click the extension icon or its floating widget to scan the page — it automatically detects all images, including thumbnails and high-resolution versions. Select the images you want, optionally filter by size or format, and download them all at once. See the <a href="/guide/">full step-by-step guide</a> for details.</p>
+        </div>
+        <div class="feature-card">
+          <h2 class="feature-title">Does it work on any website?</h2>
+          <p class="feature-description">Yes. Bulk Image Downloader scans the page you're currently viewing, whatever site it's on — it isn't limited to a specific list of supported sites. It works the same way on product pages, galleries, portfolios, blogs, and any other webpage that displays images.</p>
+        </div>
+        <div class="feature-card">
+          <h2 class="feature-title">Is Bulk Image Downloader free?</h2>
+          <p class="feature-description">Yes. Bulk Image Downloader is free to install and use from the Chrome Web Store.</p>
+        </div>
+        <div class="feature-card">
+          <h2 class="feature-title">Does it collect my data?</h2>
+          <p class="feature-description">No. Bulk Image Downloader does not collect your data. Image detection and downloading happen locally in your browser, with nothing sent to an external server. See <a href="/guide/#detection">how detection works</a> for more detail.</p>
+        </div>
+        <div class="feature-card">
+          <h2 class="feature-title">Does it work offline?</h2>
+          <p class="feature-description">Yes. Because scanning and downloading run locally in your browser rather than through a remote service, Bulk Image Downloader works offline — no account, sign-up, or internet-based processing is required.</p>
+        </div>
+        <div class="feature-card">
+          <h2 class="feature-title">What image formats and sizes can I filter by?</h2>
+          <p class="feature-description">You can filter the images Bulk Image Downloader detects on a page by size, format, or source, and sort them by dimensions or file size before downloading. This covers the common web image formats a page may contain, such as JPG, PNG, WebP, GIF, and SVG.</p>
+        </div>
+        <div class="feature-card">
+          <h2 class="feature-title">Can it find full-resolution images, not just thumbnails?</h2>
+          <p class="feature-description">Yes. Many pages only display small preview or thumbnail images while linking to larger originals behind the scenes. Bulk Image Downloader's Smart Detection finds those hidden full-resolution originals too, so you aren't stuck downloading low-res previews.</p>
+        </div>
+        <div class="feature-card">
+          <h2 class="feature-title">How do I pin the extension?</h2>
+          <p class="feature-description">Click the puzzle-piece icon in Chrome's toolbar, find Bulk Image Downloader in the list, and click the pin icon next to it to keep it visible in your toolbar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <h2>Still have questions?</h2>
+      <p>Install Bulk Image Downloader free from the Chrome Web Store and try it on your own pages.</p>
+      <a href="https://chromewebstore.google.com/detail/bulk-image-downloader/kbafpfajhhaeilcldcmmjbgjlecnbfgj" class="btn-primary" target="_blank">Install Now - It's Free</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><a href="/">Home</a> · <a href="/guide/">Guide</a> · <a href="/use-cases/">Use Cases</a> · <a href="/faq/">FAQ</a> · © 2025 Bulk Image Downloader. All rights reserved.</p>
+  </footer>
+</body>
+</html>
