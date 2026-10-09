@@ -2,7 +2,7 @@
 
 Draft for human review. Nothing here has been applied to `index.html` — the live hero
 copy is untouched. All claims below are grounded in facts already present on the
-page (free extension, Chrome Web Store, local-only processing, smart detection of
+page (Chrome Web Store, local-only processing, smart detection of
 thumbnails/high-res images, filter by size/format/source, batch download, floating
 widget). No invented stats, user counts, or ratings are used.
 
@@ -16,7 +16,7 @@ reflects search intent/volume likelihood, not language variants.
 1. **bulk image downloader** — exact brand/category match, primary target (already the `<title>` and H1 theme).
 2. **download all images from a website chrome** — matches existing FAQ question verbatim ("How do I download all images from a website in Chrome?"); strong long-tail, question-form, good for AI Overviews / featured snippets.
 3. **chrome extension to download multiple images at once** — captures "batch download" + "Chrome extension" intent already covered by the Features section.
-4. **image downloader extension free** — "free" is a real, stated fact (FAQ: "free to install and use from the Chrome Web Store"); high commercial intent, low friction for conversion.
+4. **image downloader extension** — matches generic "extension" search intent for this category; high commercial intent, low friction for conversion.
 5. **download high resolution images from website** — maps directly to the real "Smart Detection" feature (detects thumbnails + hidden high-res originals).
 6. **bulk download images from gallery/webpage** — generic use-case phrasing, matches "scans any webpage ... lets you select, filter, and download them all in one batch."
 7. **image downloader chrome extension no ads / no data collection** — maps to the real "Safe & Secure" feature (no data collection, works offline, local processing) — a genuine differentiator worth targeting since many competing extensions are ad-heavy or inject trackers.
@@ -34,15 +34,15 @@ Current live copy (unchanged, for reference):
 
 ### Option A — keyword-forward, FAQ-aligned
 **H1:** Download All Images From Any Website, in One Click
-**Sub:** A free Chrome extension that scans the page, finds every image — including hidden high-res originals — and lets you filter and download them all at once. Runs locally, no data collection.
+**Sub:** A Chrome extension that scans the page, finds every image — including hidden high-res originals — and lets you filter and download them all at once. Runs locally, no data collection.
 
 ### Option B — benefit-led, leads with the real differentiator (privacy/local)
-**H1:** Bulk Image Downloader for Chrome — Fast, Free, and Private
+**H1:** Bulk Image Downloader for Chrome — Fast and Private
 **Sub:** Scan any webpage, filter images by size or format, and batch-download exactly what you need. Everything happens locally in your browser — nothing is ever uploaded or tracked.
 
 ### Option C — closest to current tone, minimal change, adds keyword + concrete mechanism
 **H1:** Download Images in Bulk From Any Website
-**Sub:** Our free Chrome extension detects every image on a page — thumbnails and full-resolution originals alike — so you can filter, select, and download them all in a single batch.
+**Sub:** Our Chrome extension detects every image on a page — thumbnails and full-resolution originals alike — so you can filter, select, and download them all in a single batch.
 
 Recommendation: Option A or C for SEO (both work the "download all images from a website" and "bulk" phrasing into the first screen); Option B is the strongest differentiation play if conversion/trust is the bigger lever than keyword match.
 
