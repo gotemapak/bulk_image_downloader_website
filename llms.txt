@@ -1,0 +1,20 @@
+# Bulk Image Downloader
+
+> Bulk Image Downloader is a free Chrome extension that finds the images on a web page and lets you download them in bulk.
+
+## What it does (as described on the homepage)
+
+- Detects the images on the current page, including thumbnails and high-resolution versions
+- Filter images by size, format, or source; sort by dimensions or file size before downloading
+- Batch-download all selected images at once, with automatic file naming
+- Floating widget for quick access on any website
+- Price: free
+
+## Install
+
+- [Chrome Web Store listing](https://chromewebstore.google.com/detail/bulk-image-downloader/kbafpfajhhaeilcldcmmjbgjlecnbfgj): install the extension in Chrome
+- After installing: click the Extensions (puzzle-piece) icon in the Chrome toolbar, pin "Bulk Image Downloader", then click its icon on any page where you want to download images
+
+## Pages
+
+- [Homepage](https://bulk-image-downloader.com/): features and use cases
