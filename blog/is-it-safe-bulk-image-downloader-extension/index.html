@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Is It Safe to Use a Bulk Image Downloader Extension? A Security Checklist | Bulk Image Downloader</title>
+  <meta name="description" content="A practical checklist for evaluating whether a bulk image downloader extension is safe to install: permissions, data collection, offline capability, and what to verify yourself." />
+  <meta name="keywords" content="image downloader chrome extension no ads, image downloader no data collection, is bulk image downloader safe, chrome extension permissions safe" />
+  <link rel="canonical" href="https://bulk-image-downloader.com/blog/is-it-safe-bulk-image-downloader-extension/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://bulk-image-downloader.com/blog/is-it-safe-bulk-image-downloader-extension/" />
+  <meta property="og:title" content="Is It Safe to Use a Bulk Image Downloader Extension? A Security Checklist" />
+  <meta property="og:description" content="A practical checklist for evaluating whether a bulk image downloader extension is safe to install: permissions, data collection, offline capability, and what to verify yourself." />
+  <meta property="og:image" content="https://bulk-image-downloader.com/Landing_Screen_1.png" />
+  <meta property="og:site_name" content="Bulk Image Downloader" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Is It Safe to Use a Bulk Image Downloader Extension? A Security Checklist" />
+  <meta name="twitter:description" content="A practical checklist for evaluating whether a bulk image downloader extension is safe to install: permissions, data collection, offline capability, and what to verify yourself." />
+  <meta name="twitter:image" content="https://bulk-image-downloader.com/Landing_Screen_1.png" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KWNNQT8N');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Umami tracking -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="cbf2f890-7747-4fc9-b581-79adfbaeee85"></script>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #0A1625;
+      --body: #0b1623;
+      --card-bg: #0f1d2e;
+      --card-bg-2: #0c1a29;
+      --card-border: #12263c;
+      --text-hero: #e6edf3;
+      --text-muted: #cfe0ef;
+      --muted: #9fb3c8;
+      --accent: #ff4757;
+      --accent-hover: #ff3742;
+      --accent-light: #ff6b7a;
+      --radius: 18px;
+      --shadow: 0 24px 60px rgba(0,0,0,.35), 0 3px 10px rgba(0,0,0,.25);
+      --shadow-sm: 0 8px 25px rgba(0,0,0,.2);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--body);
+      color: #dbe7f3;
+      line-height: 1.6;
+    }
+
+    .header {
+      background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
+      border-bottom: 1px solid var(--card-border);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: white;
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(255, 71, 87, 0.3);
+    }
+
+    .main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .article {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 0 40px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4.5vw, 48px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0 0 20px;
+      background: linear-gradient(135deg, #fff, var(--text-hero));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .meta {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: clamp(17px, 2.2vw, 20px);
+      color: var(--text-muted);
+      margin: 0 0 32px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: white;
+      padding: 16px 32px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      transition: all 0.2s;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px rgba(255, 71, 87, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-muted);
+      padding: 16px 32px;
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .article-body {
+      padding: 20px 0 60px;
+    }
+
+    .article-body h2 {
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 800;
+      color: #fff;
+      margin: 48px 0 16px;
+    }
+
+    .article-body h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin: 32px 0 12px;
+    }
+
+    .article-body p {
+      font-size: 17px;
+      color: var(--text-muted);
+      margin: 0 0 20px;
+    }
+
+    .article-body a {
+      color: var(--accent-light);
+    }
+
+    .article-body ul, .article-body ol {
+      color: var(--text-muted);
+      font-size: 17px;
+      padding-left: 24px;
+      margin: 0 0 20px;
+    }
+
+    .article-body li {
+      margin-bottom: 10px;
+    }
+
+    .callout {
+      background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+
+    .callout p {
+      margin: 0;
+    }
+
+    .cta-section {
+      padding: 60px 0;
+      text-align: center;
+      background: linear-gradient(135deg, var(--card-bg), var(--card-bg-2));
+      border-radius: var(--radius);
+      margin: 40px 0;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+      margin: 0 0 16px;
+      color: #fff;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin: 0 0 32px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--card-border);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .footer a {
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 60px 0 30px;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+
+  <!-- Structured Data: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Is It Safe to Use a Bulk Image Downloader Extension? A Security Checklist",
+    "description": "A practical checklist for evaluating whether a bulk image downloader extension is safe to install: permissions, data collection, offline capability, and what to verify yourself.",
+    "image": "https://bulk-image-downloader.com/Landing_Screen_1.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Bulk Image Downloader"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bulk Image Downloader",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://bulk-image-downloader.com/web-app-manifest-512x512.png"
+      }
+    },
+    "mainEntityOfPage": "https://bulk-image-downloader.com/blog/is-it-safe-bulk-image-downloader-extension/",
+    "datePublished": "2026-10-09",
+    "dateModified": "2026-10-09"
+  }
+  </script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWNNQT8N"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo">
+        <div class="logo-icon">B</div>
+        Bulk Image Downloader
+      </a>
+      <nav class="nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/guide/" class="nav-link">Guide</a>
+        <a href="/use-cases/" class="nav-link">Use Cases</a>
+        <a href="/blog/" class="nav-link">Blog</a>
+        <a href="/faq/" class="nav-link">FAQ</a>
+        <a href="/install" class="nav-link">Install</a>
+        <a href="https://chromewebstore.google.com/detail/bulk-image-downloader/kbafpfajhhaeilcldcmmjbgjlecnbfgj" class="cta-button" target="_blank">Get Extension</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <article class="article">
+      <!-- Hero -->
+      <section class="hero">
+        <h1>Is It Safe to Use a Bulk Image Downloader Extension?</h1>
+        <p class="meta">Bulk Image Downloader Blog</p>
+        <p>A browser extension that can read every page you visit is a reasonable thing to be cautious about. Here's a practical checklist for evaluating one before you install it — and how Bulk Image Downloader holds up against it.</p>
+        <div class="hero-cta">
+          <a href="https://chromewebstore.google.com/detail/bulk-image-downloader/kbafpfajhhaeilcldcmmjbgjlecnbfgj" class="btn-primary" target="_blank">Install the Extension</a>
+          <a href="/faq/" class="btn-secondary">Read the FAQ</a>
+        </div>
+      </section>
+
+      <section class="article-body">
+        <p>Any extension that scans the content of whatever page you're viewing needs fairly broad permissions to do its job — that's true of a bulk image downloader just as much as an ad blocker or a password manager. Broad permissions aren't automatically a red flag, but they are a reason to actually check what an extension does with that access, rather than taking "safe" on faith. Here's a checklist worth running on any image downloading tool, including this one.</p>
+
+        <h2>1. Does it need to send your data anywhere to work?</h2>
+        <p>The core question for any extension that touches page content: does scanning and processing happen on your machine, or does the extension (or the page data) get routed through a remote server first? Local-only processing means there's no server in the middle that could log, store, or leak what you scanned. Bulk Image Downloader's image detection and downloading happen entirely locally in your browser — nothing about the pages you scan is sent to an external server, and the extension works offline because it doesn't depend on a remote service to function.</p>
+
+        <h2>2. Does it require an account or sign-up?</h2>
+        <p>Account creation is often how extensions tie your activity to an identity, even when that's framed as a convenience feature. An extension that works fully without an account has one less avenue for collecting or linking data about you. Bulk Image Downloader doesn't require an account or sign-up to install or use — there's no login step in the install flow at all.</p>
+
+        <h2>3. What permissions does it actually request, and do they match what it does?</h2>
+        <p>Every Chrome extension's permissions are listed on its Chrome Web Store page and in its manifest. The right question isn't "does it ask for a lot," it's "does what it asks for match what it claims to do." A bulk image downloader needs to read page content (to find images) and use the downloads API (to save files) — that's a reasonably minimal, explainable permission set for the feature it provides. Be more cautious of extensions in this category that also request things unrelated to scanning and downloading, like broad network request interception unrelated to images, or permissions tied to browsing history or other extensions.</p>
+
+        <h2>4. Does it work the same whether you're online or offline?</h2>
+        <p>This is a useful practical test, not just a privacy one. If an extension's core feature breaks the moment you disconnect from the internet, that's a sign it depends on a remote server somewhere in its pipeline — which means your data is passing through infrastructure you can't see or audit. If the core feature keeps working offline, that's a strong, checkable signal that processing really is local. You can verify this yourself: disconnect, try scanning a page you've already loaded, and see what happens.</p>
+
+        <h2>5. Does it respect the site you're on?</h2>
+        <p>A tool that quietly scrapes or crawls sites in the background, outside of pages you're actively viewing, raises both ethical and terms-of-service concerns. Bulk Image Downloader only acts on the page you have open and interact with directly — it doesn't browse on your behalf or operate outside the tab you're looking at.</p>
+
+        <div class="callout">
+          <p><strong>What "safe" doesn't mean:</strong> none of this is a substitute for respecting copyright, licensing, or a website's terms of service when it comes to what you do with downloaded images afterward. A tool being privacy-respecting and a use of that tool being appropriate are two separate questions — this checklist covers the former.</p>
+        </div>
+
+        <h2>Verifying this yourself, not just taking our word for it</h2>
+        <p>The most trustworthy version of this isn't a marketing claim — it's something you can check. Chrome's extension details page shows exactly what permissions an extension has requested and why. You can also test the offline behavior described above directly: install the extension, disconnect from the network, and confirm that scanning a page you've already opened still works. If a tool claims local-only processing but fails the offline test, that's a real discrepancy worth investigating — don't take any vendor's privacy claims, including ours, purely at face value when there's a concrete way to check them yourself.</p>
+
+        <h2>How this applies across use cases</h2>
+        <p>This matters more in some contexts than others. If you're scanning a public gallery for personal reference, the stakes are low either way. If you're pulling images from an internal catalog, an access-restricted page, or anything you'd rather not run through a third-party server, local-only processing stops being a nice-to-have and becomes the reason the tool is usable at all for that task. See our piece on <a href="/blog/ecommerce-product-image-research/">using bulk image downloading for e-commerce research</a> for an example where that distinction matters in practice.</p>
+
+        <p>For the mechanics of how scanning and detection actually work on a page, see our <a href="/blog/how-to-download-all-images-from-a-website/">walkthrough on downloading all images from a website</a>, or the condensed <a href="/guide/">step-by-step guide</a>. For quick answers on specific questions — offline use, data collection, supported formats — the <a href="/faq/">FAQ page</a> covers the most common ones directly.</p>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta-section">
+        <h2>Check the permissions yourself</h2>
+        <p>Install Bulk Image Downloader from the Chrome Web Store and review its permissions before you scan a single page.</p>
+        <a href="https://chromewebstore.google.com/detail/bulk-image-downloader/kbafpfajhhaeilcldcmmjbgjlecnbfgj" class="btn-primary" target="_blank">Install Now</a>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p><a href="/">Home</a> · <a href="/guide/">Guide</a> · <a href="/use-cases/">Use Cases</a> · <a href="/blog/">Blog</a> · <a href="/faq/">FAQ</a> · © 2025 Bulk Image Downloader. All rights reserved.</p>
+  </footer>
+</body>
+</html>
