@@ -1,0 +1,542 @@
+/* Shared base.css — common structure/behavior across all 4 product sites.
+   Only --accent is overridden per site; everything else stays identical so the
+   4 copies can be diffed/kept in sync. Load this BEFORE the page's own <style>
+   block, which should only contain what's unique to that page. */
+
+:root {
+  --brand: #0A1625;
+  --body: #0b1623;
+  --card-bg: #0f1d2e;
+  --card-bg-2: #0c1a29;
+  --card-border: #12263c;
+  --text-hero: #e6edf3;
+  --text-muted: #cfe0ef;
+  --muted: #9fb3c8;
+  --radius: 18px;
+  --accent: #ff4757; /* bulk-image-downloader brand color (overridden from the shared default) */
+  --accent-hover: color-mix(in srgb, var(--accent) 85%, black);
+  --accent-light: color-mix(in srgb, var(--accent) 75%, white);
+  --shadow: 0 24px 60px rgba(0, 0, 0, .35), 0 3px 10px rgba(0, 0, 0, .25);
+  --shadow-sm: 0 8px 25px rgba(0, 0, 0, .2);
+  --container-max: 1200px;
+  --gap-section: clamp(40px, 8vw, 80px);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--body);
+  color: #dbe7f3;
+  line-height: 1.6;
+}
+
+/* ---------- Shared layout containers ---------- */
+
+.wrap,
+.main {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.article {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* ---------- Header / nav ---------- */
+
+.header {
+  background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
+  border-bottom: 1px solid var(--card-border);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-link,
+.nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav a:hover {
+  color: #fff;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  text-align: center;
+  padding: 80px 0 60px;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 5vw, 56px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 20px;
+  background: linear-gradient(135deg, #fff, var(--text-hero));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero .meta {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: clamp(17px, 2.5vw, 22px);
+  color: var(--text-muted);
+  margin: 0 0 32px;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: white;
+  padding: 16px 32px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  transition: all 0.2s;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-muted);
+  padding: 16px 32px;
+  border: 2px solid var(--card-border);
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------- Section headers ---------- */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  margin: 0 0 16px;
+  color: #fff;
+}
+
+.section-subtitle {
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- Feature / card grids (mobile-safe: no minmax(300px,...) on narrow screens) ---------- */
+
+.features-grid,
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 26px;
+}
+
+.feature-title,
+.feature-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: #fff;
+}
+
+.feature-description,
+.feature-card p {
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ---------- Benefits / checklist ---------- */
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: var(--text-muted);
+}
+
+.benefits-list li::before {
+  content: "✓";
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* ---------- Article body (blog/guide copy) ---------- */
+
+.article-body {
+  padding: 20px 0 60px;
+}
+
+.article-body h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  color: #fff;
+  margin: 48px 0 16px;
+}
+
+.article-body h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin: 32px 0 12px;
+}
+
+.article-body p {
+  font-size: 17px;
+  color: var(--text-muted);
+  margin: 0 0 20px;
+}
+
+.article-body a {
+  color: var(--accent-light);
+}
+
+.article-body ul,
+.article-body ol {
+  color: var(--text-muted);
+  font-size: 17px;
+  padding-left: 24px;
+  margin: 0 0 20px;
+}
+
+.article-body li {
+  margin-bottom: 10px;
+}
+
+.callout {
+  background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 32px 0;
+}
+
+.callout p {
+  margin: 0;
+}
+
+/* ---------- Comparison tables: desktop = table, mobile (<=768px) = stacked cards ---------- */
+
+.compare-table-wrap,
+.comparison-table-wrap {
+  overflow-x: auto;
+  margin: 32px 0;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+}
+
+table.compare-table,
+table.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+table.compare-table th,
+table.compare-table td,
+table.comparison-table th,
+table.comparison-table td {
+  padding: 16px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--card-border);
+  color: var(--text-muted);
+}
+
+table.compare-table th,
+table.comparison-table th {
+  background: var(--card-bg-2);
+  color: #fff;
+  font-weight: 700;
+}
+
+table.compare-table tr:last-child td,
+table.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+table.compare-table td.dash {
+  color: var(--muted);
+}
+
+.table-footnote {
+  font-size: 14px;
+  color: var(--muted);
+  margin: -12px 0 32px;
+}
+
+/* ---------- CTA / Footer ---------- */
+
+.cta-section {
+  padding: 60px 0;
+  text-align: center;
+  background: linear-gradient(135deg, var(--card-bg), var(--card-bg-2));
+  border-radius: var(--radius);
+  margin: 40px 0;
+}
+
+.cta-section h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  margin: 0 0 16px;
+  color: #fff;
+}
+
+.cta-section p {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin: 0 0 32px;
+}
+
+.footer {
+  border-top: 1px solid var(--card-border);
+  padding: 40px 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+.footer a {
+  color: var(--text-muted);
+}
+
+/* ================= Responsive: 3 required breakpoints ================= */
+
+/* Tablet: mainly guard against comparison-table overflow and 2-col grids getting tight */
+@media (max-width: 1024px) {
+  .features-grid,
+  .features {
+    gap: 20px;
+  }
+}
+
+/* Main breakpoint — every page must behave correctly here */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
+  }
+
+  .nav {
+    gap: 14px;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 44px 0 32px;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features-grid,
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header {
+    margin-bottom: 36px;
+  }
+
+  /* Comparison tables become stacked cards instead of a horizontally-scrolling table.
+     Requires each <td> to carry data-label="<column header text>" in markup. */
+  .compare-table-wrap table,
+  .comparison-table-wrap table {
+    border: 0;
+  }
+
+  .compare-table-wrap table thead,
+  .comparison-table-wrap table thead {
+    display: none;
+  }
+
+  .compare-table-wrap table tr,
+  .comparison-table-wrap table tr {
+    display: block;
+    border-bottom: 1px solid var(--card-border);
+    padding: 16px 18px;
+  }
+
+  .compare-table-wrap table tr:last-child,
+  .comparison-table-wrap table tr:last-child {
+    border-bottom: 0;
+  }
+
+  .compare-table-wrap table td,
+  .comparison-table-wrap table td {
+    display: block;
+    border-bottom: none;
+    padding: 6px 0;
+  }
+
+  .compare-table-wrap table td[data-label]::before,
+  .comparison-table-wrap table td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  table.compare-table td:first-child,
+  table.comparison-table td:first-child {
+    color: #fff;
+    font-weight: 700;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .hero {
+    padding: 36px 0 24px;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .cta-button {
+    width: 100%;
+  }
+
+  .hero-cta {
+    width: 100%;
+  }
+}

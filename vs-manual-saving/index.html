@@ -45,315 +45,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="/shared/base.css" />
   <style>
-    :root {
-      --brand: #0A1625;
-      --body: #0b1623;
-      --card-bg: #0f1d2e;
-      --card-bg-2: #0c1a29;
-      --card-border: #12263c;
-      --text-hero: #e6edf3;
-      --text-muted: #cfe0ef;
-      --muted: #9fb3c8;
-      --accent: #ff4757;
-      --accent-hover: #ff3742;
-      --accent-light: #ff6b7a;
-      --radius: 18px;
-      --shadow: 0 24px 60px rgba(0,0,0,.35), 0 3px 10px rgba(0,0,0,.25);
-      --shadow-sm: 0 8px 25px rgba(0,0,0,.2);
-    }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--body);
-      color: #dbe7f3;
-      line-height: 1.6;
-    }
-
-    .header {
-      background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
-      border-bottom: 1px solid var(--card-border);
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .header-content {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 20px;
-      font-weight: 700;
-      color: #fff;
-      text-decoration: none;
-    }
-
-    .logo-icon {
-      width: 32px;
-      height: 32px;
-      background: var(--accent);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 800;
-    }
-
-    .nav {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .nav-link {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .nav-link:hover {
-      color: #fff;
-    }
-
-    .cta-button {
-      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
-      color: white;
-      padding: 12px 24px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.2s;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(255, 71, 87, 0.3);
-    }
-
-    .main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .article {
-      max-width: 780px;
-      margin: 0 auto;
-    }
-
     .hero {
-      text-align: center;
       padding: 80px 0 40px;
     }
 
-    .hero h1 {
-      font-size: clamp(30px, 4.5vw, 48px);
-      font-weight: 800;
-      line-height: 1.2;
-      margin: 0 0 20px;
-      background: linear-gradient(135deg, #fff, var(--text-hero));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero .meta {
-      color: var(--muted);
-      font-size: 15px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: clamp(17px, 2.2vw, 20px);
-      color: var(--text-muted);
-      margin: 0 0 32px;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
-      color: white;
-      padding: 16px 32px;
-      border-radius: 16px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 18px;
-      transition: all 0.2s;
-      box-shadow: var(--shadow);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 50px rgba(255, 71, 87, 0.4);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--text-muted);
-      padding: 16px 32px;
-      border: 2px solid var(--card-border);
-      border-radius: 16px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 18px;
-      transition: all 0.2s;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .article-body {
-      padding: 20px 0 60px;
-    }
-
-    .article-body h2 {
-      font-size: clamp(24px, 3vw, 32px);
-      font-weight: 800;
-      color: #fff;
-      margin: 48px 0 16px;
-    }
-
-    .article-body p {
-      font-size: 17px;
-      color: var(--text-muted);
-      margin: 0 0 20px;
-    }
-
-    .article-body a {
-      color: var(--accent-light);
-    }
-
-    .article-body ul, .article-body ol {
-      color: var(--text-muted);
-      font-size: 17px;
-      padding-left: 24px;
-      margin: 0 0 20px;
-    }
-
-    .article-body li {
-      margin-bottom: 10px;
-    }
-
-    .callout {
-      background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      padding: 24px 28px;
-      margin: 32px 0;
-    }
-
-    .callout p {
-      margin: 0;
-    }
-
-    .compare-table-wrap {
-      overflow-x: auto;
-      margin: 32px 0;
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-    }
-
-    table.compare-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 16px;
-    }
-
-    table.compare-table th, table.compare-table td {
-      padding: 16px 18px;
-      text-align: left;
-      border-bottom: 1px solid var(--card-border);
-    }
-
-    table.compare-table th {
-      background: var(--card-bg-2);
-      color: #fff;
-      font-weight: 700;
-    }
-
-    table.compare-table td {
-      color: var(--text-muted);
-    }
-
-    table.compare-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .cta-section {
-      padding: 60px 0;
-      text-align: center;
-      background: linear-gradient(135deg, var(--card-bg), var(--card-bg-2));
-      border-radius: var(--radius);
-      margin: 40px 0;
-    }
-
-    .cta-section h2 {
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 800;
-      margin: 0 0 16px;
-      color: #fff;
-    }
-
-    .cta-section p {
-      font-size: 18px;
-      color: var(--text-muted);
-      margin: 0 0 32px;
-    }
-
-    .footer {
-      border-top: 1px solid var(--card-border);
-      padding: 40px 0;
-      text-align: center;
-      color: var(--muted);
-    }
-
-    .footer a {
-      color: var(--text-muted);
-    }
-
     @media (max-width: 768px) {
-      .header-content {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .nav {
-        gap: 16px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
       .hero {
         padding: 60px 0 30px;
-      }
-
-      .hero-cta {
-        flex-direction: column;
-        align-items: center;
       }
     }
   </style>
@@ -437,24 +137,24 @@
             </thead>
             <tbody>
               <tr>
-                <td>Steps to save 40 images</td>
-                <td>Right-click, "Save Image As," confirm — repeated 40 times</td>
-                <td>One scan, select, one batch download</td>
+                <td data-label="">Steps to save 40 images</td>
+                <td data-label="Saving images one by one">Right-click, "Save Image As," confirm — repeated 40 times</td>
+                <td data-label="Bulk Image Downloader">One scan, select, one batch download</td>
               </tr>
               <tr>
-                <td>Images only visible in the rendered page</td>
-                <td>That's all you can right-click and save</td>
-                <td>Also finds full-resolution originals linked behind thumbnails, which you'd have to know to look for manually</td>
+                <td data-label="">Images only visible in the rendered page</td>
+                <td data-label="Saving images one by one">That's all you can right-click and save</td>
+                <td data-label="Bulk Image Downloader">Also finds full-resolution originals linked behind thumbnails, which you'd have to know to look for manually</td>
               </tr>
               <tr>
-                <td>Filtering before saving</td>
-                <td>Not possible — you decide per image, before you've seen the full set</td>
-                <td>Scan first, then filter by size, format, or source, then download</td>
+                <td data-label="">Filtering before saving</td>
+                <td data-label="Saving images one by one">Not possible — you decide per image, before you've seen the full set</td>
+                <td data-label="Bulk Image Downloader">Scan first, then filter by size, format, or source, then download</td>
               </tr>
               <tr>
-                <td>File naming</td>
-                <td>Whatever the browser assigns per save dialog, one at a time</td>
-                <td>Automatic batch naming across the whole selection</td>
+                <td data-label="">File naming</td>
+                <td data-label="Saving images one by one">Whatever the browser assigns per save dialog, one at a time</td>
+                <td data-label="Bulk Image Downloader">Automatic batch naming across the whole selection</td>
               </tr>
             </tbody>
           </table>
