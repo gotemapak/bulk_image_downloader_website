@@ -32,6 +32,13 @@ body {
   line-height: 1.6;
 }
 
+/* Fallback colour for unclassed in-text links: the browser default (#0000ee) is
+   unreadable on the dark background. Element-level specificity, so any page or
+   component rule (.nav a, .btn-primary, footer a, ...) still overrides it. */
+a {
+  color: var(--accent-light);
+}
+
 /* ---------- Shared layout containers ---------- */
 
 .wrap,
@@ -110,6 +117,12 @@ body {
 .nav-link:hover,
 .nav a:hover {
   color: #fff;
+}
+
+/* Header-less pages (nav sits directly inside .wrap): centre it and give it breathing room */
+.wrap > .nav {
+  justify-content: center;
+  margin: 40px 0;
 }
 
 .cta-button {
