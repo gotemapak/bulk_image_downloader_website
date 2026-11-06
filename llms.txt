@@ -20,3 +20,6 @@
 - [Guide](https://bulk-image-downloader.com/guide/): step-by-step guide to downloading all images from a website in Chrome
 - [FAQ](https://bulk-image-downloader.com/faq/): frequently asked questions about Bulk Image Downloader
 - [Use Cases](https://bulk-image-downloader.com/use-cases/): common ways people use Bulk Image Downloader
+- [Blog](https://bulk-image-downloader.com/blog/): guides and deep dives — downloading all images from a site, e-commerce product image research, and extension privacy/security
+- [Bulk Image Downloader vs. Imageye](https://bulk-image-downloader.com/vs-imageye/): comparison with another image-downloading Chrome extension
+- [Bulk Image Downloader vs. Manual Saving](https://bulk-image-downloader.com/vs-manual-saving/): comparison with right-click "Save Image As" one at a time

@@ -55,12 +55,6 @@
       width: 64px;
       height: 64px;
     }
-
-    /* Benefits-style trust section */
-    .benefits {
-      padding: 60px 0;
-      background: linear-gradient(180deg, transparent, rgba(255, 71, 87, 0.05));
-    }
   </style>
 
   <!-- Structured Data: HowTo -->
@@ -146,7 +140,7 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <header class="header">
+    <header class="header">
     <div class="header-content">
       <a href="/" class="logo">
         <div class="logo-icon">B</div>
@@ -154,6 +148,7 @@
       </a>
       <nav class="nav">
         <a href="/" class="nav-link">Home</a>
+        <a href="/guide/" class="nav-link active">Guide</a>
         <a href="/use-cases/" class="nav-link">Use Cases</a>
         <a href="/blog/" class="nav-link">Blog</a>
         <a href="/faq/" class="nav-link">FAQ</a>
@@ -177,12 +172,12 @@
     </section>
 
     <!-- Steps -->
-    <section id="how-it-works" style="padding: 20px 0 40px;">
-      <div class="section-header" style="margin-bottom: 40px;">
-        <h2 class="section-title" style="font-size: clamp(28px, 3.5vw, 40px);">The 4 steps</h2>
+    <section id="how-it-works" class="section-pad-t20-b40">
+      <div class="section-header section-header--tight">
+        <h2 class="section-title section-title--md">The 4 steps</h2>
         <p class="section-subtitle">No right-clicking and saving images one at a time — scan the page once and download the whole batch.</p>
       </div>
-      <div class="features-grid" style="margin-top: 0;">
+      <div class="features-grid features-grid--flush">
         <div class="feature-card" id="step-1">
           <div class="feature-icon">1️⃣</div>
           <h3 class="feature-title">Install Bulk Image Downloader</h3>
@@ -207,8 +202,8 @@
     </section>
 
     <!-- Thumbnails vs full-resolution explainer -->
-    <section class="benefits" id="detection" style="padding: 60px 0;">
-      <div class="benefits-content" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto;">
+    <section class="benefits" id="detection">
+      <div class="benefits-content benefits-content--narrow">
         <div class="benefits-text">
           <h2>Thumbnails vs. full-resolution: how detection works</h2>
           <p>Many websites only display small preview or thumbnail images in the page layout, while the actual full-resolution originals are linked behind them — in a gallery, a lightbox, or a product page zoom. If you right-click and save what you see, you often end up with a low-resolution preview instead of the real image.</p>
@@ -218,12 +213,12 @@
     </section>
 
     <!-- Privacy / why no data leaves your browser -->
-    <section style="padding: 20px 0 60px;">
-      <div class="section-header" style="margin-bottom: 40px;">
-        <h2 class="section-title" style="font-size: clamp(28px, 3.5vw, 40px);">Why no data ever leaves your browser</h2>
+    <section class="section-pad-t20-b60">
+      <div class="section-header section-header--tight">
+        <h2 class="section-title section-title--md">Why no data ever leaves your browser</h2>
         <p class="section-subtitle">Everything described above happens on your own machine.</p>
       </div>
-      <ul class="benefits-list" style="max-width: 700px; margin: 0 auto;">
+      <ul class="benefits-list benefits-list--narrow">
         <li>Image detection and downloading happen locally in your browser — nothing about the pages you scan is sent to an external server.</li>
         <li>The extension works offline and does not collect your data.</li>
         <li>No account or sign-up is required to install or use it.</li>
@@ -232,20 +227,20 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" style="padding: 20px 0 60px;">
+    <section id="faq" class="section-pad-t20-b60">
       <div class="section-header">
         <h2 class="section-title">FAQ</h2>
       </div>
-      <div style="max-width: 800px; margin: 0 auto; display: grid; gap: 20px;">
-        <div class="feature-card" style="text-align: left;">
+      <div class="qa-list">
+        <div class="feature-card feature-card--left">
           <h3 class="feature-title">How do I download all images from a website in Chrome?</h3>
           <p class="feature-description">Install the Bulk Image Downloader extension, then open the webpage containing the images. Click the extension icon or its floating widget to scan the page — it automatically detects all images, including thumbnails and high-resolution versions. Select the images you want, optionally filter by size or format, and download them all at once.</p>
         </div>
-        <div class="feature-card" style="text-align: left;">
+        <div class="feature-card feature-card--left">
           <h3 class="feature-title">Why does the extension find more images than I can see on the page?</h3>
           <p class="feature-description">Many pages only display small preview or thumbnail images while linking to larger originals behind the scenes. Smart Detection finds those hidden full-resolution originals too, so you aren't stuck downloading low-res previews.</p>
         </div>
-        <div class="feature-card" style="text-align: left;">
+        <div class="feature-card feature-card--left">
           <h3 class="feature-title">Does downloading images this way collect my data?</h3>
           <p class="feature-description">No. Bulk Image Downloader does not collect your data — it works offline and all image detection and downloading happens locally in your browser.</p>
         </div>
@@ -260,8 +255,8 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <p><a href="/">Back to Bulk Image Downloader home</a> · <a href="/use-cases/">Use Cases</a> · <a href="/blog/">Blog</a> · <a href="/faq/">FAQ</a> · <a href="/vs-imageye/">vs. Imageye</a> · <a href="/vs-manual-saving/">vs. Manual Saving</a> · © 2026 Bulk Image Downloader. All rights reserved.</p>
+    <footer class="footer">
+    <p><a href="/">Home</a> · <a href="/guide/">Guide</a> · <a href="/use-cases/">Use Cases</a> · <a href="/blog/">Blog</a> · <a href="/faq/">FAQ</a> · <a href="/vs-imageye/">vs. Imageye</a> · <a href="/vs-manual-saving/">vs. Manual Saving</a> · © 2026 Bulk Image Downloader. All rights reserved.</p>
   </footer>
 </body>
 </html>

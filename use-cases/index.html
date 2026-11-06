@@ -47,14 +47,9 @@
 
   <link rel="stylesheet" href="/shared/base.css" />
   <style>
+    /* This page's feature cards are left-aligned use-case write-ups, not centered pitches */
     .feature-card {
       text-align: left;
-      transition: all 0.2s;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
     }
 
     .feature-icon {
@@ -72,86 +67,6 @@
       padding: 4px 10px;
       border-radius: 8px;
       margin-bottom: 16px;
-    }
-
-    /* Benefits-style explainer section */
-    .benefits {
-      padding: 60px 0;
-      background: linear-gradient(180deg, transparent, rgba(255, 71, 87, 0.05));
-    }
-
-    .benefits-text h2 {
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 800;
-      margin: 0 0 24px;
-      color: #fff;
-    }
-
-    .benefits-text p {
-      font-size: 18px;
-      color: var(--text-muted);
-      margin: 0 0 24px;
-    }
-
-    /* CTA section */
-    .cta-section {
-      padding: 60px 0;
-      text-align: center;
-      background: linear-gradient(135deg, var(--card-bg), var(--card-bg-2));
-      border-radius: var(--radius);
-      margin: 40px 0;
-    }
-
-    .cta-section h2 {
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 800;
-      margin: 0 0 16px;
-      color: #fff;
-    }
-
-    .cta-section p {
-      font-size: 18px;
-      color: var(--text-muted);
-      margin: 0 0 32px;
-    }
-
-    /* Footer */
-    .footer {
-      border-top: 1px solid var(--card-border);
-      padding: 40px 0;
-      text-align: center;
-      color: var(--muted);
-    }
-
-    .footer a {
-      color: var(--text-muted);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .header-content {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .nav {
-        gap: 16px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .hero {
-        padding: 60px 0 40px;
-      }
-
-      .hero-cta {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 
@@ -197,7 +112,7 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <header class="header">
+    <header class="header">
     <div class="header-content">
       <a href="/" class="logo">
         <div class="logo-icon">B</div>
@@ -206,7 +121,7 @@
       <nav class="nav">
         <a href="/" class="nav-link">Home</a>
         <a href="/guide/" class="nav-link">Guide</a>
-        <a href="/use-cases/" class="nav-link">Use Cases</a>
+        <a href="/use-cases/" class="nav-link active">Use Cases</a>
         <a href="/blog/" class="nav-link">Blog</a>
         <a href="/faq/" class="nav-link">FAQ</a>
         <a href="/vs-imageye/" class="nav-link">vs. Imageye</a>
@@ -229,7 +144,7 @@
     </section>
 
     <!-- Use case cards -->
-    <section id="use-cases" style="padding: 0 0 20px;">
+    <section id="use-cases" class="section-pad-b20">
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">🛒</div>
@@ -259,8 +174,8 @@
     </section>
 
     <!-- How this works under the hood -->
-    <section class="benefits" id="how-it-applies" style="padding: 60px 0;">
-      <div class="benefits-content" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto;">
+    <section class="benefits" id="how-it-applies">
+      <div class="benefits-content benefits-content--narrow">
         <div class="benefits-text">
           <h2>These all use the same mechanism</h2>
           <p>Bulk Image Downloader doesn't have dedicated integrations for specific sites — it works by scanning whatever page is currently open in your browser, the same way on a product page, a portfolio, a gallery, or an article. That's what makes it useful across these different use cases: the workflow (open the page, scan, filter, download) doesn't change based on what kind of site you're on.</p>
@@ -277,7 +192,7 @@
     </section>
   </main>
 
-  <footer class="footer">
+    <footer class="footer">
     <p><a href="/">Home</a> · <a href="/guide/">Guide</a> · <a href="/use-cases/">Use Cases</a> · <a href="/blog/">Blog</a> · <a href="/faq/">FAQ</a> · <a href="/vs-imageye/">vs. Imageye</a> · <a href="/vs-manual-saving/">vs. Manual Saving</a> · © 2026 Bulk Image Downloader. All rights reserved.</p>
   </footer>
 </body>
