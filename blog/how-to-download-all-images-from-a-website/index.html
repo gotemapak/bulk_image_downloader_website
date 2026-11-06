@@ -90,7 +90,7 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <header class="header">
+    <header class="header">
     <div class="header-content">
       <a href="/" class="logo">
         <div class="logo-icon">B</div>
@@ -100,8 +100,10 @@
         <a href="/" class="nav-link">Home</a>
         <a href="/guide/" class="nav-link">Guide</a>
         <a href="/use-cases/" class="nav-link">Use Cases</a>
-        <a href="/blog/" class="nav-link">Blog</a>
+        <a href="/blog/" class="nav-link active">Blog</a>
         <a href="/faq/" class="nav-link">FAQ</a>
+        <a href="/vs-imageye/" class="nav-link">vs. Imageye</a>
+        <a href="/vs-manual-saving/" class="nav-link">vs. Manual Saving</a>
         <a href="/install" class="nav-link">Install</a>
         <a href="https://chromewebstore.google.com/detail/bulk-image-downloader/kbafpfajhhaeilcldcmmjbgjlecnbfgj" class="cta-button" target="_blank">Get Extension</a>
       </nav>
@@ -122,7 +124,7 @@
       </section>
 
       <section class="article-body">
-        <p>If you've ever tried to save every photo from a product page, a portfolio, or a gallery, you've probably run into the same wall: right-clicking and choosing "Save image as" one at a time is slow, and worse, it often saves the wrong file. What you see rendered on the page is frequently a compressed preview — the real, full-resolution image is loaded separately and only shown when you click to zoom, open a lightbox, or hover over a thumbnail.</p>
+        <p>If you've ever tried to save every photo from a product page, a portfolio, or a gallery, you've probably run into the same wall: <a href="/vs-manual-saving/">right-clicking and choosing "Save image as" one at a time</a> is slow, and worse, it often saves the wrong file. What you see rendered on the page is frequently a compressed preview — the real, full-resolution image is loaded separately and only shown when you click to zoom, open a lightbox, or hover over a thumbnail.</p>
 
         <p>This happens because of how most websites are built for speed. Loading a full-size, multi-megabyte photo for every thumbnail on a page would make the page slow to load, so sites serve a small preview first and only load the larger original when you actually ask for it. That's efficient for browsing, but it means a plain right-click grabs the lightweight preview, not the asset you actually wanted.</p>
 
@@ -133,7 +135,7 @@
           <li><strong>Open each image in a new tab to find the full-size version.</strong> More reliable, but means clicking through every single image on the page one by one.</li>
           <li><strong>View page source and hunt for image URLs.</strong> Technically possible, but requires knowing what you're looking for in raw HTML, and still doesn't separate thumbnails from originals or let you filter by size.</li>
         </ul>
-        <p>None of these scale to a page with dozens or hundreds of images. That's the specific problem a bulk image downloader is built to solve: scan the whole page once, find everything — including the hidden full-size versions — and let you choose what to keep before downloading in one batch.</p>
+        <p>None of these scale to a page with dozens or hundreds of images. That's the specific problem <a href="/vs-imageye/">a bulk image downloader</a> is built to solve: scan the whole page once, find everything — including the hidden full-size versions — and let you choose what to keep before downloading in one batch.</p>
 
         <h2>The faster way: scan, detect, filter, download</h2>
         <p>With the <a href="https://chromewebstore.google.com/detail/bulk-image-downloader/kbafpfajhhaeilcldcmmjbgjlecnbfgj" target="_blank">Bulk Image Downloader</a> Chrome extension, the same job breaks down into four steps instead of fifty individual right-clicks:</p>
@@ -181,8 +183,8 @@
     </article>
   </main>
 
-  <footer class="footer">
-    <p><a href="/">Home</a> · <a href="/guide/">Guide</a> · <a href="/use-cases/">Use Cases</a> · <a href="/blog/">Blog</a> · <a href="/faq/">FAQ</a> · © 2026 Bulk Image Downloader. All rights reserved.</p>
+    <footer class="footer">
+    <p><a href="/">Home</a> · <a href="/guide/">Guide</a> · <a href="/use-cases/">Use Cases</a> · <a href="/blog/">Blog</a> · <a href="/faq/">FAQ</a> · <a href="/vs-imageye/">vs. Imageye</a> · <a href="/vs-manual-saving/">vs. Manual Saving</a> · © 2026 Bulk Image Downloader. All rights reserved.</p>
   </footer>
 </body>
 </html>

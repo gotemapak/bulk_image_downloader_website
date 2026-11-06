@@ -47,14 +47,9 @@
 
   <link rel="stylesheet" href="/shared/base.css" />
   <style>
+    /* This page's Q&A cards get more breathing room than the base default */
     .feature-card {
       padding: 32px;
-      transition: all 0.2s;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
     }
 
     .feature-description a {
@@ -134,7 +129,7 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <header class="header">
+    <header class="header">
     <div class="header-content">
       <a href="/" class="logo">
         <div class="logo-icon">B</div>
@@ -145,7 +140,7 @@
         <a href="/guide/" class="nav-link">Guide</a>
         <a href="/use-cases/" class="nav-link">Use Cases</a>
         <a href="/blog/" class="nav-link">Blog</a>
-        <a href="/faq/" class="nav-link">FAQ</a>
+        <a href="/faq/" class="nav-link active">FAQ</a>
         <a href="/vs-imageye/" class="nav-link">vs. Imageye</a>
         <a href="/vs-manual-saving/" class="nav-link">vs. Manual Saving</a>
         <a href="/install" class="nav-link">Install</a>
@@ -166,8 +161,8 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" style="padding: 0 0 60px;">
-      <div style="max-width: 800px; margin: 0 auto; display: grid; gap: 20px;">
+    <section id="faq" class="section-pad-b60">
+      <div class="qa-list">
         <div class="feature-card">
           <h2 class="feature-title">How do I download all images from a website in Chrome?</h2>
           <p class="feature-description">Install the Bulk Image Downloader extension, then open the webpage containing the images. Click the extension icon or its floating widget to scan the page — it automatically detects all images, including thumbnails and high-resolution versions. Select the images you want, optionally filter by size or format, and download them all at once. See the <a href="/guide/">full step-by-step guide</a> for details.</p>
@@ -207,7 +202,7 @@
     </section>
   </main>
 
-  <footer class="footer">
+    <footer class="footer">
     <p><a href="/">Home</a> · <a href="/guide/">Guide</a> · <a href="/use-cases/">Use Cases</a> · <a href="/blog/">Blog</a> · <a href="/faq/">FAQ</a> · <a href="/vs-imageye/">vs. Imageye</a> · <a href="/vs-manual-saving/">vs. Manual Saving</a> · © 2026 Bulk Image Downloader. All rights reserved.</p>
   </footer>
 </body>

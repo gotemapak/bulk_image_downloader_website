@@ -119,6 +119,12 @@ a {
   color: #fff;
 }
 
+/* Current-page indicator, set by the partial-include generator's {{active:KEY}} marker */
+.nav-link.active {
+  color: #fff;
+  font-weight: 700;
+}
+
 /* Header-less pages (nav sits directly inside .wrap): centre it and give it breathing room */
 .wrap > .nav {
   justify-content: center;
@@ -257,6 +263,17 @@ a {
   border-radius: var(--radius);
   padding: 28px;
   text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+/* Modifier: left-align a feature-card used for Q&A / list content instead of a centered pitch */
+.feature-card--left {
+  text-align: left;
 }
 
 .feature-icon {
@@ -307,6 +324,213 @@ a {
   color: var(--accent);
   font-weight: 700;
   font-size: 18px;
+}
+
+.benefits-list--narrow {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ---------- Benefits section (was hand-copied identically into index/guide/use-cases <style> blocks) ---------- */
+
+.benefits {
+  padding: 60px 0;
+  background: linear-gradient(180deg, transparent, rgba(255, 71, 87, 0.05));
+}
+
+.benefits-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Modifier: single centered column (used by the "Perfect for Everyone" persona section) */
+.benefits-content--center {
+  grid-template-columns: 1fr;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Modifier: single narrow column, left-aligned (used by explainer-only benefits sections) */
+.benefits-content--narrow {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.benefits-text h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  margin: 0 0 24px;
+  color: #fff;
+}
+
+.benefits-text p {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin: 0 0 24px;
+}
+
+/* Modifier: larger hero-style heading/lead for the persona section */
+.benefits-text--hero h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  margin-bottom: 24px;
+}
+
+.benefits-text--hero p {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.benefits-visual {
+  text-align: center;
+}
+
+.benefits-visual img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Persona / "who it's for" cards (previously 6 hand-copied inline-style blocks on index.html) ---------- */
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.persona-card {
+  background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.persona-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.persona-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.persona-card__check {
+  width: 24px;
+  height: 24px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.persona-card h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.persona-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ---------- Small section-spacing utilities (replace one-off inline padding/margin overrides) ---------- */
+
+.section-pad-t20 { padding: 20px 0 0; }
+.section-pad-t20-b40 { padding: 20px 0 40px; }
+.section-pad-t20-b60 { padding: 20px 0 60px; }
+.section-pad-b60 { padding: 0 0 60px; }
+.section-pad-b20 { padding: 0 0 20px; }
+
+.features-section {
+  padding-top: 40px;
+}
+
+.section-header--tight {
+  margin-bottom: 40px;
+}
+
+.section-title--md {
+  font-size: clamp(28px, 3.5vw, 40px);
+}
+
+.features-grid--flush {
+  margin-top: 0;
+}
+
+/* Shared "list of Q&A cards" wrapper (was a repeated inline style on index/guide/faq) */
+.qa-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+}
+
+.link-accent {
+  color: var(--accent);
+}
+
+/* ---------- FAQ accordion (plain CSS, no JS) — for future Q&A sections ---------- */
+
+.faq-accordion {
+  background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 4px 24px;
+  margin-bottom: 12px;
+}
+
+.faq-accordion summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.faq-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-accordion summary::after {
+  content: "+";
+  font-size: 22px;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.faq-accordion[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-accordion p {
+  color: var(--text-muted);
+  margin: 0 0 20px;
+  line-height: 1.6;
 }
 
 /* ---------- Article body (blog/guide copy) ---------- */
@@ -485,6 +709,11 @@ table.compare-table td.dash {
 
   .section-header {
     margin-bottom: 36px;
+  }
+
+  .benefits-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   /* Comparison tables become stacked cards instead of a horizontally-scrolling table.

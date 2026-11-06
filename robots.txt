@@ -1,8 +1,12 @@
-# All crawlers, including search engines and AI crawlers, are welcome.
+# This site welcomes all crawlers — search engines and AI crawlers alike.
+# The default rule below already covers everyone; the two blocks after it
+# just name the AI crawlers explicitly so the allowance is unambiguous,
+# split by what each one is used for.
 User-agent: *
 Allow: /
 
-# AI search / answer-engine crawlers (explicitly allowed)
+# Explicitly allowed: AI assistants/answer engines fetching a page live in
+# response to a user query (ChatGPT, Claude, Perplexity search/browse modes).
 User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
 User-agent: Claude-SearchBot
@@ -11,7 +15,8 @@ User-agent: PerplexityBot
 User-agent: Perplexity-User
 Allow: /
 
-# AI training / grounding crawlers (explicitly allowed)
+# Explicitly allowed: bulk/offline crawlers used for AI model training or
+# retrieval-grounding corpora, not a live user request.
 User-agent: GPTBot
 User-agent: ClaudeBot
 User-agent: anthropic-ai

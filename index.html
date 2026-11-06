@@ -47,7 +47,8 @@
 
   <link rel="stylesheet" href="/shared/base.css" />
   <style>
-    /* Features section */
+    /* Features section: this page's sections sit flush below a tighter hero,
+       so this page needs a taller section-header gap than the base default. */
     .section-header {
       margin-bottom: 80px;
     }
@@ -55,51 +56,6 @@
     .feature-icon {
       width: 64px;
       height: 64px;
-    }
-
-    /* Benefits section */
-    .benefits {
-      padding: 60px 0;
-      background: linear-gradient(180deg, transparent, rgba(255, 71, 87, 0.05));
-    }
-
-    .benefits-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .benefits-text h2 {
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 800;
-      margin: 0 0 24px;
-      color: #fff;
-    }
-
-    .benefits-text p {
-      font-size: 18px;
-      color: var(--text-muted);
-      margin: 0 0 32px;
-    }
-
-    .benefits-visual {
-      text-align: center;
-    }
-
-    .benefits-visual img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .benefits-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
     }
   </style>
 
@@ -164,15 +120,15 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <header class="header">
+    <header class="header">
     <div class="header-content">
       <a href="/" class="logo">
         <div class="logo-icon">B</div>
         Bulk Image Downloader
       </a>
       <nav class="nav">
-        <a href="#features" class="nav-link">Features</a>
-        <a href="#benefits" class="nav-link">Benefits</a>
+        <a href="/" class="nav-link active">Home</a>
+        <a href="/guide/" class="nav-link">Guide</a>
         <a href="/use-cases/" class="nav-link">Use Cases</a>
         <a href="/blog/" class="nav-link">Blog</a>
         <a href="/faq/" class="nav-link">FAQ</a>
@@ -195,19 +151,19 @@
     </section>
 
     <!-- What it does -->
-    <section id="what-it-does" style="padding: 20px 0 0;">
-      <div class="section-header" style="margin-bottom: 40px;">
-        <h2 class="section-title" style="font-size: clamp(28px, 3.5vw, 40px);">What does Bulk Image Downloader do?</h2>
+    <section id="what-it-does" class="section-pad-t20">
+      <div class="section-header section-header--tight">
+        <h2 class="section-title section-title--md">What does Bulk Image Downloader do?</h2>
         <p class="section-subtitle">Bulk Image Downloader is a Chrome extension that scans any webpage, detects every image on it — including thumbnails and hidden high-resolution versions — and lets you select, filter, and download them all in one batch. It runs locally in your browser, with no data collection.</p>
       </div>
     </section>
 
     <!-- How it works -->
-    <section id="how-it-works" style="padding: 20px 0 40px;">
-      <div class="section-header" style="margin-bottom: 40px;">
-        <h2 class="section-title" style="font-size: clamp(28px, 3.5vw, 40px);">How it works</h2>
+    <section id="how-it-works" class="section-pad-t20-b40">
+      <div class="section-header section-header--tight">
+        <h2 class="section-title section-title--md">How it works</h2>
       </div>
-      <div class="features-grid" style="margin-top: 0;">
+      <div class="features-grid features-grid--flush">
         <div class="feature-card">
           <div class="feature-icon">1️⃣</div>
           <h3 class="feature-title">Open the page</h3>
@@ -227,7 +183,7 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features-section" id="features" style="padding-top: 40px;">
+    <section class="features-section" id="features">
       <div class="section-header">
         <h2 class="section-title">Powerful Features</h2>
         <p class="section-subtitle">Everything you need to download images efficiently from any website</p>
@@ -267,53 +223,53 @@
     </section>
 
     <!-- Benefits Section -->
-    <section class="benefits" id="benefits" style="padding: 60px 0;">
-      <div class="benefits-content" style="grid-template-columns: 1fr; text-align: center; max-width: 800px; margin: 0 auto;">
-        <div class="benefits-text">
-          <h2 style="font-size: clamp(32px, 4vw, 48px); margin-bottom: 24px;">Perfect for Everyone</h2>
-          <p style="font-size: 20px; margin-bottom: 40px; color: var(--text-muted);">Whether you're a designer, developer, researcher, or content creator, Bulk Image Downloader saves you time and effort.</p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px;">
-            <div style="background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2)); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; text-align: left;">
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <div style="width: 24px; height: 24px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">✓</div>
-                <h3 style="margin: 0; color: #fff; font-size: 18px; font-weight: 600;">Web Designers</h3>
+    <section class="benefits" id="benefits">
+      <div class="benefits-content benefits-content--center">
+        <div class="benefits-text benefits-text--hero">
+          <h2>Perfect for Everyone</h2>
+          <p>Whether you're a designer, developer, researcher, or content creator, Bulk Image Downloader saves you time and effort.</p>
+          <div class="persona-grid">
+            <div class="persona-card">
+              <div class="persona-card__header">
+                <div class="persona-card__check">✓</div>
+                <h3>Web Designers</h3>
               </div>
-              <p style="margin: 0; color: var(--text-muted); font-size: 14px;">Collecting inspiration and visual references</p>
+              <p>Collecting inspiration and visual references</p>
             </div>
-            <div style="background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2)); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; text-align: left;">
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <div style="width: 24px; height: 24px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">✓</div>
-                <h3 style="margin: 0; color: #fff; font-size: 18px; font-weight: 600;">Content Creators</h3>
+            <div class="persona-card">
+              <div class="persona-card__header">
+                <div class="persona-card__check">✓</div>
+                <h3>Content Creators</h3>
               </div>
-              <p style="margin: 0; color: var(--text-muted); font-size: 14px;">Building comprehensive image libraries</p>
+              <p>Building comprehensive image libraries</p>
             </div>
-            <div style="background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2)); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; text-align: left;">
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <div style="width: 24px; height: 24px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">✓</div>
-                <h3 style="margin: 0; color: #fff; font-size: 18px; font-weight: 600;">Researchers</h3>
+            <div class="persona-card">
+              <div class="persona-card__header">
+                <div class="persona-card__check">✓</div>
+                <h3>Researchers</h3>
               </div>
-              <p style="margin: 0; color: var(--text-muted); font-size: 14px;">Gathering visual data and references</p>
+              <p>Gathering visual data and references</p>
             </div>
-            <div style="background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2)); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; text-align: left;">
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <div style="width: 24px; height: 24px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">✓</div>
-                <h3 style="margin: 0; color: #fff; font-size: 18px; font-weight: 600;">E-commerce Managers</h3>
+            <div class="persona-card">
+              <div class="persona-card__header">
+                <div class="persona-card__check">✓</div>
+                <h3>E-commerce Managers</h3>
               </div>
-              <p style="margin: 0; color: var(--text-muted); font-size: 14px;">Downloading product photos efficiently</p>
+              <p>Downloading product photos efficiently</p>
             </div>
-            <div style="background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2)); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; text-align: left;">
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <div style="width: 24px; height: 24px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">✓</div>
-                <h3 style="margin: 0; color: #fff; font-size: 18px; font-weight: 600;">Students</h3>
+            <div class="persona-card">
+              <div class="persona-card__header">
+                <div class="persona-card__check">✓</div>
+                <h3>Students</h3>
               </div>
-              <p style="margin: 0; color: var(--text-muted); font-size: 14px;">Collecting images for projects and research</p>
+              <p>Collecting images for projects and research</p>
             </div>
-            <div style="background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2)); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; text-align: left;">
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <div style="width: 24px; height: 24px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">✓</div>
-                <h3 style="margin: 0; color: #fff; font-size: 18px; font-weight: 600;">Everyone</h3>
+            <div class="persona-card">
+              <div class="persona-card__header">
+                <div class="persona-card__check">✓</div>
+                <h3>Everyone</h3>
               </div>
-              <p style="margin: 0; color: var(--text-muted); font-size: 14px;">Anyone who needs to save images efficiently</p>
+              <p>Anyone who needs to save images efficiently</p>
             </div>
           </div>
         </div>
@@ -321,24 +277,24 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" style="padding: 60px 0;">
+    <section id="faq" class="section-pad-b60">
       <div class="section-header">
         <h2 class="section-title">Frequently Asked Questions</h2>
       </div>
-      <div style="max-width: 800px; margin: 0 auto; display: grid; gap: 20px;">
-        <div class="feature-card" style="text-align: left;">
+      <div class="qa-list">
+        <div class="feature-card feature-card--left">
           <h3 class="feature-title">How do I download all images from a website in Chrome?</h3>
-          <p class="feature-description">Install the Bulk Image Downloader extension, then open the webpage containing the images. Click the extension icon or its floating widget to scan the page — it automatically detects all images, including thumbnails and high-resolution versions. Select the images you want, optionally filter by size or format, and download them all at once. See the <a href="/guide/" style="color: var(--accent);">full step-by-step guide</a> for details.</p>
+          <p class="feature-description">Install the Bulk Image Downloader extension, then open the webpage containing the images. Click the extension icon or its floating widget to scan the page — it automatically detects all images, including thumbnails and high-resolution versions. Select the images you want, optionally filter by size or format, and download them all at once. See the <a href="/guide/" class="link-accent">full step-by-step guide</a> for details.</p>
         </div>
-        <div class="feature-card" style="text-align: left;">
+        <div class="feature-card feature-card--left">
           <h3 class="feature-title">Can I filter images by size or format?</h3>
           <p class="feature-description">Yes. You can filter detected images by size, format, or source, and sort them by dimensions or file size before downloading.</p>
         </div>
-        <div class="feature-card" style="text-align: left;">
+        <div class="feature-card feature-card--left">
           <h3 class="feature-title">Does it collect my data?</h3>
           <p class="feature-description">No. Bulk Image Downloader does not collect your data — it works offline and all image detection happens locally in your browser.</p>
         </div>
-        <div class="feature-card" style="text-align: left;">
+        <div class="feature-card feature-card--left">
           <h3 class="feature-title">How do I pin the extension?</h3>
           <p class="feature-description">Click the puzzle-piece icon in Chrome's toolbar, find Bulk Image Downloader in the list, and click the pin icon next to it to keep it visible in your toolbar.</p>
         </div>
@@ -353,8 +309,8 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <p><a href="/guide/">Guide</a> · <a href="/use-cases/">Use Cases</a> · <a href="/blog/">Blog</a> · <a href="/faq/">FAQ</a> · <a href="/vs-imageye/">vs. Imageye</a> · <a href="/vs-manual-saving/">vs. Manual Saving</a> · © 2026 Bulk Image Downloader. All rights reserved.</p>
+    <footer class="footer">
+    <p><a href="/">Home</a> · <a href="/guide/">Guide</a> · <a href="/use-cases/">Use Cases</a> · <a href="/blog/">Blog</a> · <a href="/faq/">FAQ</a> · <a href="/vs-imageye/">vs. Imageye</a> · <a href="/vs-manual-saving/">vs. Manual Saving</a> · © 2026 Bulk Image Downloader. All rights reserved.</p>
   </footer>
 </body>
 </html>
